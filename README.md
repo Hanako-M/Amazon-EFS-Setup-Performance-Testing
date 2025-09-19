@@ -50,7 +50,7 @@ Allowed TCP inbound traffic on port 2049 (NFS).
 Associated the group with the EFS mount targets.
 
 📸 Screenshot:
-![Security Group](/Screenshot-2025-09-20-005639.png)
+![Security Group](Screenshot-2025-09-20-005639.png)
 
 2️⃣ EFS File System Creation
 
@@ -63,7 +63,7 @@ Tagged the file system with Name = My First EFS File System.
 Detached the default security group from mount targets and attached the custom one.
 
 📸 Screenshot:
-![Security Group](/Screenshot-2025-09-20-010221.png) 
+![Security Group](Screenshot-2025-09-20-010221.png) 
 
 3️⃣ Connecting to EC2 Instance
 
@@ -80,7 +80,7 @@ Verified mount using:
 sudo df -hT
 
 📸 Screenshot:
-![Security Group](/Screenshot-2025-09-20-011603.png) 
+![Security Group](Screenshot-2025-09-20-011603.png) 
 
 5️⃣ Performance Testing
 
