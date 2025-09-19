@@ -50,7 +50,7 @@ Allowed TCP inbound traffic on port 2049 (NFS).
 Associated the group with the EFS mount targets.
 
 📸 Screenshot:
-
+![Security Group](/Screenshot-2025-09-20-005639.png)
 
 2️⃣ EFS File System Creation
 
@@ -63,14 +63,11 @@ Tagged the file system with Name = My First EFS File System.
 Detached the default security group from mount targets and attached the custom one.
 
 📸 Screenshot:
-
+![Security Group](/Screenshot-2025-09-20-010221.png) 
 
 3️⃣ Connecting to EC2 Instance
 
 Connected via Session Manager using InstanceSessionURL.
-
-📸 Screenshot:
-
 
 4️⃣ Mounting the File System
 sudo su -l ec2-user
@@ -78,14 +75,12 @@ sudo yum install -y amazon-efs-utils
 sudo mkdir efs
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-XXXXXXXX.efs.<region>.amazonaws.com:/ efs
 
-
 Verified mount using:
 
 sudo df -hT
 
-
 📸 Screenshot:
-
+![Security Group](/Screenshot-2025-09-20-011603.png) 
 
 5️⃣ Performance Testing
 
@@ -95,16 +90,11 @@ sudo fio --name=fio-efs --filesize=10G --filename=./efs/fio-efs-test.img \
 --bs=1M --nrfiles=1 --direct=1 --sync=0 --rw=write --iodepth=200 --ioengine=libaio
 
 
-📸 Screenshot:
-
-
 6️⃣ CloudWatch Monitoring
 
 Observed PermittedThroughput and DataWriteIOBytes metrics in CloudWatch.
 
 Calculated write throughput based on 1-minute intervals.
-
-📸 Screenshot:
 
 
 ## 📊 Key Observations
